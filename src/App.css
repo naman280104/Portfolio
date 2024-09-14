@@ -1,0 +1,42 @@
+.home-name{
+    position: absolute;
+    padding: 50px;
+    width: 700px;
+    height: 80px;
+    background-color: rgba(128, 128, 128, 0.1);
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.typing-container{
+    white-space: pre-wrap; 
+    overflow: hidden;
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace; 
+    animation: 0.75s step-end infinite;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+    /* animation: blink 1s step-start forwards; */
+  }
+  
+  .cursor.hidden {
+    opacity: 0;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+
