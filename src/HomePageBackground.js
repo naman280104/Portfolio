@@ -15,7 +15,9 @@ const init = () => {
   container = document.createElement('div');
   container.style.zIndex = 1;
   document.body.appendChild(container);
-
+  container.style.position='fixed'
+  container.style.height='100vh'
+  container.style.width='100vw'
   // camera
 
   camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 15000);

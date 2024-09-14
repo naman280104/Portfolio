@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
 .home-name {
   position: absolute;
   padding: 50px;
   width: 700px;
   height: 80px;
+  background: transparent;
   background-color: rgba(128, 128, 128, 0.1);
   color: white;
   left: 50%;
@@ -19,9 +23,28 @@
   font-size: 24px;
   font-weight: bold;
   display: inline-block;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Fira Code','IBM Plex Mono', monospace;  
   animation: 0.75s step-end infinite;
 }
+
+.home-name::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s; 
+}
+
+.home-name:hover::before {
+  transform: scaleX(1);
+}
+
+
 
 .cursor {
   display: inline-block;
