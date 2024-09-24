@@ -18,6 +18,7 @@ const init = () => {
   container.style.position='fixed'
   container.style.height='100vh'
   container.style.width='100vw'
+  container.className="awesome-three-js-background"
   // camera
 
   camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 15000);

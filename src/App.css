@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+div{
+  margin: 0;
+}
 
 .home-name {
   position: absolute;
@@ -23,7 +28,7 @@
   font-size: 24px;
   font-weight: bold;
   display: inline-block;
-  font-family: 'Fira Code','IBM Plex Mono', monospace;  
+  font-family: 'Fira Code', 'IBM Plex Mono', monospace;
   animation: 0.75s step-end infinite;
 }
 
@@ -37,14 +42,12 @@
   background: rgba(128, 128, 128, 0.2);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.5s; 
+  transition: transform 0.5s;
 }
 
 .home-name:hover::before {
   transform: scaleX(1);
 }
-
-
 
 .cursor {
   display: inline-block;
@@ -55,3 +58,206 @@
 .cursor.hidden {
   opacity: 0;
 }
+
+.home-nav {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  height: 30px;
+  color: white;
+  right: 80px;
+  top: 40px;
+}
+
+.home-icons {
+  position: relative;
+  margin: 10px;
+  padding: 10px 15px 10px 15px;
+  align-self: center;
+  background: transparent;
+  background-color: rgba(128, 128, 128, 0.4);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  font-family: 'Exo 2', 'sans-serif';
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.home-icons {
+  cursor: pointer;
+}
+
+.home-icons::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s;
+}
+
+.home-icons:hover::before {
+  transform: scaleX(1);
+}
+
+
+.about-page {
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #27292a;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  background-image: url('https://exp-gemini.lusion.co/assets/images/background-preloader-dithered.png');
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+}
+
+.about-page.visible {
+  opacity: 1;
+  display: block;
+}
+
+
+#about-exit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  z-index: 11;
+}
+
+#about-exit--close-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+#about-exit--close-btn .bar {
+  background-color: #efefef;
+  height: 1px;
+  width: 12px;
+  position: absolute;
+  transform: rotate(0deg);
+  will-change: transform;
+  transition: transform 3s cubic-bezier(0.09, 1.17, 0.7, 1.01);
+}
+
+#about-exit--close-btn .bar:nth-of-type(1) {
+  transform: rotate(45deg);
+}
+#about-exit--close-btn .bar:nth-of-type(2) {
+  transform: rotate(-45deg);
+}
+
+
+#about-exit--close-btn:hover .bar {
+  transform: rotate(360deg)
+}
+
+#about-content{
+  display: flex;
+  position: relative;
+  top: 150px;
+  left: 250px;
+  padding: 10px;
+}
+
+
+#about-left-content{
+  margin-top: 40px;
+  margin-right: 100px;
+}
+
+#about-right-content{
+  margin-left: 100px;
+}
+
+#about-my-image{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#about-my-image>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+#about-title{
+  height: 30px;
+}
+
+#about-role{
+  color: rgb(169, 168, 168);
+}
+
+#about-img-break{
+  height: 1px;
+  background-color: wheat;
+  box-shadow: 100px 100px 100px rgba(241, 222, 187, 0.7);
+}
+
+#about-social-icons{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.about-icons{
+  color: white;
+  font-size: 30px;
+  margin: 10px 10px;
+}
+
+#about-me{
+  width: 45vw;
+  font-family: 'Fira Code';
+}
+
+#about-right-content span{
+  padding: 0 6.5px;
+  display: inline-block;
+  white-space: break-spaces;
+  animation: fadeInByWord 1.6s cubic-bezier(0.42, 0, 0, 0.99) both;
+  animation-delay: calc(var(--index) * 15 * 1ms);
+  transition: transform 2s cubic-bezier(0.65, 0.05, 0.36, 1),opacity 3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transform-origin: left center; 
+}
+
+@keyframes fadeInByWord {
+  from {
+   transform:translateY(30px) scaleY(0.9) rotate(3deg);
+   opacity:0
+  }
+  to {
+   transform:translateY(0px) scaleY(1) rotate(0deg);
+   opacity:1
+  }
+ }
