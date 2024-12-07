@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import myImage from './assets/myimg.jpeg'; // Adjust the path as necessary
+import myImage from './assets/myimg.jpeg';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
 

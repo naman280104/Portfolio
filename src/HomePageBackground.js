@@ -13,6 +13,7 @@ const clock = new THREE.Clock();
 
 const init = () => {
   container = document.createElement('div');
+  container.id = "awesome-three-js-background"
   container.style.zIndex = 1;
   document.body.appendChild(container);
   container.style.position='fixed'
@@ -32,12 +33,12 @@ const init = () => {
 
   // world
 
-  const s = 250;
+  const s = 50;
 
   const geometry = new THREE.BoxGeometry(s, s, s);
   const material = new THREE.MeshPhongMaterial({ color: 0xffffff, specular: 0xffffff, shininess: 50 });
 
-  for (let i = 0; i < 3000; i++) {
+  for (let i = 0; i < 500; i++) {
 
     const mesh = new THREE.Mesh(geometry, material);
 

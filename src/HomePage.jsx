@@ -2,15 +2,18 @@ import HomeTypingEffect from './HomeTypingEffect';
 import init from './HomePageBackground';
 import { useEffect, useState } from 'react';
 import AboutPage from './AboutPage';
+import ProjectPage from './ProjectPage';
 
 
 
 function HomePage() {
 
-    const [showOverlay,setShowOverlay] = useState()
+    const [showOverlay,setShowOverlay] = useState('')
     useEffect(()=>{
-        init();
-    },[])
+        init()
+        // if(showOverlay==='') init();
+        // else document.getElementById('awesome-three-js-background').remove();
+    },[showOverlay])
 
     return (
         <div>
@@ -27,6 +30,7 @@ function HomePage() {
         </div>
         
         <AboutPage close={setShowOverlay} showOverlay={showOverlay}/>
+        <ProjectPage close={setShowOverlay} showOverlay={showOverlay}/>
         </div>
     )
 }
