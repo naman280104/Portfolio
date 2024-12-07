@@ -2,21 +2,13 @@ import React, { useEffect, useState } from 'react'
 import myImage from './assets/myimg.jpeg';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 export default function AboutPage(props) {
-
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        if (props.showOverlay === 'about') {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
-    }, [props.showOverlay]);
+    const navigate = useNavigate();
 
     const handleClose = () => {
-        props.close('');
+        navigate('/');
     }
 
     const splitWords = (text) => {
@@ -29,7 +21,7 @@ export default function AboutPage(props) {
 
     return (
 
-        <div className={`about-page ${isVisible ? 'visible' : ''}`}>
+        <div className='about-page'>
             <div id='about-exit'>
                 <div id="about-exit--close-btn" onClick={handleClose}>
                     <div className="bar"></div>

@@ -144,15 +144,10 @@ div {
   background-repeat: no-repeat;
   color: white;
   background-image: url('https://exp-gemini.lusion.co/assets/images/background-preloader-dithered.png');
-  opacity: 0;
-  display: none;
-  transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
-}
-
-.about-page.visible {
   opacity: 1;
   display: block;
 }
+
 
 
 
@@ -309,17 +304,9 @@ div {
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  /* background-image: url('https://exp-gemini.lusion.co/assets/images/background-preloader-dithered.png'); */
-  opacity: 0;
-  display: none;
-  transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
-}
-
-.project-page.visible {
   opacity: 1;
   display: block;
 }
-
 
 
 #project-exit {
@@ -328,9 +315,6 @@ div {
   right: 0;
   display: flex;
   justify-content: flex-end;
-  /* width: 100%; */
-  /* height: 12%; */
-  /* z-index: 11; */
 }
 
 #project-exit--close-btn {

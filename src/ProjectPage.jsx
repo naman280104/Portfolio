@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { FaGithub } from 'react-icons/fa';
 import { projects } from "./data/projects.js";  // Assuming your file is named 'projects.js'
+import { useNavigate } from 'react-router-dom';
 
 export default function ProjectPage(props) {
-    const [isVisible, setIsVisible] = useState(false);
-    useEffect(() => {
-        if (props.showOverlay === 'projects') {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
-    }, [props.showOverlay]);
-
+    const navigate = useNavigate();    
     const handleClose = () => {
-        props.close('');
+        navigate('/');
     }
 
     return (
-        <div className={`project-page ${isVisible ? 'visible' : ''}`}>
+        <div className='project-page'>
             <div id='project-exit'>
                 <div id="project-exit--close-btn" onClick={handleClose}>
                     <div className="bar"></div>
